@@ -25,10 +25,26 @@
           <span>Coffee Roasters</span>
         </a>
 
-        <nav class="site-nav" aria-label="Primary">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+          data-nav-toggle
+        >
+          <span class="site-nav__toggle-lines" aria-hidden="true">
+            <span class="site-nav__toggle-line"></span>
+            <span class="site-nav__toggle-line"></span>
+            <span class="site-nav__toggle-line"></span>
+          </span>
+        </button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-nav-panel>
           <ul class="site-nav__list">
             <li><a class="site-nav__link" href="/index.html">Home</a></li>
             <li><a class="site-nav__link" href="/menu.html" aria-current="page">Menu</a></li>
+            <li><a class="site-nav__link" href="/events.html">Events</a></li>
             <li><a class="site-nav__link" href="/about.html">About</a></li>
             <li><a class="site-nav__link" href="/contact.html">Contact</a></li>
           </ul>
@@ -41,27 +57,7 @@
     <main id="main-content">
       <section class="section-shell">
         <div class="container flow-6">
-          <div class="flow-5" id="seasonal-menu">
-            <div class="page-overview page-overview--split">
-              <div class="section-heading flow-3">
-                <p class="section-heading__kicker">Menu</p>
-                <h1 class="section-heading__title">Current drinks, teas, and pastries from the bar and bake counter.</h1>
-                <p class="lead">
-                  The menu changes with the season, but the throughline stays the same: balanced coffee,
-                  bright tea drinks, and pastries that feel thoughtful without getting precious.
-                </p>
-              </div>
-
-              <aside class="section-frame page-overview__support flow-4" aria-labelledby="menu-intro-title">
-                <p class="section-heading__kicker">Baked daily</p>
-                <h2 class="section-heading__title" id="menu-intro-title">Fresh batches, rotating specials, and clear guidance at the bar.</h2>
-                <p>
-                  If something sells through early, the register team will point you to the closest fresh
-                  option and let you know what is headed out of the oven next.
-                </p>
-              </aside>
-            </div>
-
+          
             <div class="section-heading flow-3">
               <p class="section-heading__kicker">On bar now</p>
               <h2 class="section-heading__title">
@@ -265,7 +261,7 @@
           <div class="site-footer__contact flow-2">
             <p><a href="https://maps.google.com/?q=14+Alder+Street+Lancaster+PA+17602">14 Alder Street, Lancaster, PA 17602</a></p>
             <p>
-              <a href="tel:+18285550147">(828) 555-0147</a> -
+              <a href="tel:+17175550147">(717) 555-0147</a> -
               <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
             </p>
           </div>
@@ -277,18 +273,18 @@
             <ul class="footer-link-group__list">
               <li><a href="/about.html">About Us</a></li>
               <li><a href="/about.html#our-story">Our Story</a></li>
-              <li><a href="/contact.html#visit">Visit the Cafe</a></li>
-              <li><a href="mailto:jobs@harvestandhearth.com">Careers</a></li>
+              <li><a href="/events.html">Upcoming Events</a></li>
+              <li><a href="/event-open-mic.html">Open Mic Night</a></li>
             </ul>
           </section>
 
           <section class="footer-link-group" aria-labelledby="footer-support-title">
             <h2 class="footer-link-group__title" id="footer-support-title">Support</h2>
             <ul class="footer-link-group__list">
+              <li><a href="/contact.html#visit">Visit the Cafe</a></li>
               <li><a href="/contact.html#contact-form">Contact Us</a></li>
+              <li><a href="/contact.html#events">Host an Event</a></li>
               <li><a href="mailto:accessibility@harvestandhearth.com">Accessibility</a></li>
-              <li><a href="mailto:hello@harvestandhearth.com?subject=Gift%20Cards">Gift Cards</a></li>
-              <li><a href="tel:+18285550147">Call the Cafe</a></li>
             </ul>
           </section>
         </nav>

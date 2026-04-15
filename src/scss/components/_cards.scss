@@ -16,7 +16,6 @@
 .section-frame,
 .feature-card,
 .menu-item,
-.quote-card,
 .contact-card,
 .hours-card,
 .process-step,
@@ -75,25 +74,6 @@
 
   &__label {
     margin-top: space(2);
-  }
-}
-
-.quote-card {
-  display: grid;
-  align-content: center;
-  gap: space(4);
-  background: linear-gradient(180deg, tone(color-token(cream), 12%), color-token(white));
-
-  &__copy {
-    color: color-token(ink);
-    font-family: vars.$font-heading;
-    font-size: type-size(400);
-    line-height: 1.25;
-  }
-
-  &__cite {
-    color: color-token(mocha);
-    font-weight: 700;
   }
 }
 
@@ -245,9 +225,21 @@
   --menu-image-filter: saturate(1) contrast(1.05);
 }
 
+.menu-item--burnt-honey {
+  --menu-image-position: 68% 40%;
+  --menu-image-scale: 1.18;
+  --menu-image-filter: saturate(1.02) contrast(1.04);
+}
+
 .menu-item--jasmine-citrus {
   --menu-image-position: 42% 22%;
   --menu-image-filter: saturate(0.85) hue-rotate(-18deg) brightness(1.02);
+}
+
+.menu-item--strawberry-matcha {
+  --menu-image-position: 44% 24%;
+  --menu-image-scale: 1.12;
+  --menu-image-filter: saturate(0.9) hue-rotate(-16deg) brightness(1.04);
 }
 
 .menu-item--honey-ginger {
@@ -265,6 +257,12 @@
   --menu-image-position: 64% 70%;
   --menu-image-scale: 1.14;
   --menu-image-filter: saturate(0.88) sepia(0.1) contrast(1.02);
+}
+
+.menu-item--rhubarb-galette {
+  --menu-image-position: 28% 72%;
+  --menu-image-scale: 1.16;
+  --menu-image-filter: saturate(1.02) sepia(0.06) brightness(1.02);
 }
 
 .contact-card,

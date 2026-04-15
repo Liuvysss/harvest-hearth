@@ -1,13 +1,23 @@
 @use "../abstracts/functions" as *;
-@use "../abstracts/mixins" as mixins;
 
-.highlight-layout {
-  display: grid;
-  gap: space(4);
-}
+.home-community__panel {
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(color-token(espresso), 0.68), rgba(color-token(roast), 0.82)),
+    url("../assets/coffee-3.jpg") center / cover no-repeat;
+  border-color: rgba(color-token(cream), 0.16);
 
-@include mixins.respond-up(lg) {
-  .highlight-layout {
-    grid-template-columns: 1.05fr 0.95fr;
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-heading__kicker {
+    color: tone(color-token(oat), 3%);
+  }
+
+  .section-heading__title,
+  p {
+    color: color-token(white);
   }
 }

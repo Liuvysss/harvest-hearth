@@ -1,0 +1,19 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.events-listing,
+.events-planning-grid {
+  display: grid;
+  gap: space(5);
+}
+
+.events-planning-grid > * {
+  height: 100%;
+}
+
+@include mixins.respond-up(lg) {
+  .events-planning-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
+  }
+}

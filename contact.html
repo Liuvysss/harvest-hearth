@@ -25,42 +25,38 @@
           <span>Coffee Roasters</span>
         </a>
 
-        <nav class="site-nav" aria-label="Primary">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+          data-nav-toggle
+        >
+          <span class="site-nav__toggle-lines" aria-hidden="true">
+            <span class="site-nav__toggle-line"></span>
+            <span class="site-nav__toggle-line"></span>
+            <span class="site-nav__toggle-line"></span>
+          </span>
+        </button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-nav-panel>
           <ul class="site-nav__list">
             <li><a class="site-nav__link" href="/index.html">Home</a></li>
             <li><a class="site-nav__link" href="/menu.html">Menu</a></li>
+            <li><a class="site-nav__link" href="/events.html">Events</a></li>
             <li><a class="site-nav__link" href="/about.html">About</a></li>
             <li><a class="site-nav__link" href="/contact.html" aria-current="page">Contact</a></li>
           </ul>
         </nav>
 
-        <a class="button button--secondary" href="tel:+18285550147">Call the Cafe</a>
+        <a class="button button--secondary" href="tel:+17175550147">Call the Cafe</a>
       </div>
     </header>
 
     <main id="main-content">
       <section class="section-shell">
         <div class="container flow-6">
-          <div class="page-overview page-overview--split">
-            <div class="section-heading flow-3">
-              <p class="section-heading__kicker">Contact</p>
-              <h1 class="section-heading__title">Plan a visit, ask about catering, or reach the cafe team.</h1>
-              <p class="lead">
-                Use the form for events, pastry preorders, and wholesale questions, or call the shop if you
-                need same-day help with hours, seating, or current availability.
-              </p>
-            </div>
-
-            <aside class="section-frame page-overview__support flow-4" aria-labelledby="contact-intro-title">
-              <p class="section-heading__kicker">Quickest response</p>
-              <h2 class="section-heading__title" id="contact-intro-title">Email for planning, phone for day-of questions.</h2>
-              <p>
-                We usually reply within two business days, and the cafe line is the best option for same-day
-                updates, large-order pickup timing, and general visit questions.
-              </p>
-            </aside>
-          </div>
-
           <div class="contact-layout">
             <section class="section-frame flow-5" id="contact-form" aria-labelledby="contact-form-title">
               <div class="section-heading flow-3">
@@ -125,7 +121,7 @@
                 <address>
                   14 Alder Street<br />
                   Lancaster, PA 17602<br />
-                  <a href="tel:+18285550147">(828) 555-0147</a><br />
+                  <a href="tel:+17175550147">(717) 555-0147</a><br />
                   <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
                 </address>
                 <p>Street parking on Alder and Oak is easiest before 9:00 AM on weekdays.</p>
@@ -142,13 +138,13 @@
               </section>
 
               <section class="contact-card flow-3" id="events" aria-labelledby="events-title">
-                <p class="section-heading__kicker">Private bookings</p>
-                <h2 class="contact-card__title" id="events-title">Catering and workshops</h2>
+                <p class="section-heading__kicker">Event planning</p>
+                <h2 class="contact-card__title" id="events-title">Private bookings and community classes</h2>
                 <p>
-                  From office coffee service to pastry-forward morning meetings, we build menus for groups
-                  that want something thoughtful without a lot of fuss.
+                  From office coffee service to latte art sessions and after-hours gatherings, we build
+                  events that still feel relaxed, hospitable, and easy to host.
                 </p>
-                <a class="button button--ghost" href="/about.html#values">Meet the team</a>
+                <a class="button button--ghost" href="/events.html">See upcoming events</a>
               </section>
             </div>
           </div>
@@ -197,7 +193,7 @@
           <div class="site-footer__contact flow-2">
             <p><a href="https://maps.google.com/?q=14+Alder+Street+Lancaster+PA+17602">14 Alder Street, Lancaster, PA 17602</a></p>
             <p>
-              <a href="tel:+18285550147">(828) 555-0147</a> -
+              <a href="tel:+17175550147">(717) 555-0147</a> -
               <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
             </p>
           </div>
@@ -209,18 +205,18 @@
             <ul class="footer-link-group__list">
               <li><a href="/about.html">About Us</a></li>
               <li><a href="/about.html#our-story">Our Story</a></li>
-              <li><a href="/contact.html#visit">Visit the Cafe</a></li>
-              <li><a href="mailto:jobs@harvestandhearth.com">Careers</a></li>
+              <li><a href="/events.html">Upcoming Events</a></li>
+              <li><a href="/event-open-mic.html">Open Mic Night</a></li>
             </ul>
           </section>
 
           <section class="footer-link-group" aria-labelledby="footer-support-title">
             <h2 class="footer-link-group__title" id="footer-support-title">Support</h2>
             <ul class="footer-link-group__list">
+              <li><a href="/contact.html#visit">Visit the Cafe</a></li>
               <li><a href="/contact.html#contact-form">Contact Us</a></li>
+              <li><a href="/contact.html#events">Host an Event</a></li>
               <li><a href="mailto:accessibility@harvestandhearth.com">Accessibility</a></li>
-              <li><a href="mailto:hello@harvestandhearth.com?subject=Gift%20Cards">Gift Cards</a></li>
-              <li><a href="tel:+18285550147">Call the Cafe</a></li>
             </ul>
           </section>
         </nav>

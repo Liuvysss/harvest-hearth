@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Harvest & Hearth Coffee Roasters is a Lancaster, PA cafe serving house-roasted coffee, seasonal drinks, and morning pastries in a warm all-day space."
+      content="Browse upcoming Harvest & Hearth events in Lancaster, PA, including open mic nights, live music, and latte art classes."
     />
     <link rel="stylesheet" href="/src/styles/site.css" />
     <script type="module" src="/src/scripts/site.js"></script>
-    <title>Harvest & Hearth Coffee Roasters | Home</title>
+    <title>Harvest & Hearth Coffee Roasters | Events</title>
   </head>
-  <body class="page page--home">
+  <body class="page page--events">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
@@ -42,156 +42,221 @@
 
         <nav class="site-nav" id="primary-navigation" aria-label="Primary" data-nav-panel>
           <ul class="site-nav__list">
-            <li><a class="site-nav__link" href="/index.html" aria-current="page">Home</a></li>
+            <li><a class="site-nav__link" href="/index.html">Home</a></li>
             <li><a class="site-nav__link" href="/menu.html">Menu</a></li>
-            <li><a class="site-nav__link" href="/events.html">Events</a></li>
+            <li><a class="site-nav__link" href="/events.html" aria-current="page">Events</a></li>
             <li><a class="site-nav__link" href="/about.html">About</a></li>
             <li><a class="site-nav__link" href="/contact.html">Contact</a></li>
           </ul>
         </nav>
 
-        <a class="button button--secondary" href="/menu.html">See the Menu</a>
+        <a class="button button--secondary" href="/contact.html#events">Host an Event</a>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="page-hero page-hero--home">
-        <div class="page-hero__inner container">
-          <div class="page-hero__content flow-5">
-            <p class="eyebrow">Roasted in Lancaster, PA</p>
-            <div class="flow-4">
-              <h1>Coffee for the mornings you rush and the afternoons you don't.</h1>
-              <p class="lead">
-                Harvest & Hearth is a neighborhood cafe built around steady hospitality: small-batch
-                espresso, laminated pastries from the oven, and a room that feels easy to settle into.
+      <section class="section-shell">
+        <div class="container flow-6">
+          <div class="events-listing">
+            <div class="section-heading flow-3">
+              <p class="section-heading__kicker">May calendar</p>
+              <h2 class="section-heading__title">Three upcoming gatherings on the books for May 2026.</h2>
+              <p class="section-heading__copy">
+                Each night is structured a little differently, but all of them keep the cafe atmosphere
+                intact: thoughtful drinks, manageable crowd sizes, and clear details before you arrive.
               </p>
             </div>
-            <div class="button-group">
-              <a class="button" href="/menu.html">Explore the Menu</a>
-              <a class="button button--ghost" href="/about.html">Read Our Story</a>
+
+            <div class="event-grid">
+              <article class="event-card event-card--open-mic">
+                <div class="event-card__media">
+                  <img
+                    class="event-card__image"
+                    src="/src/assets/event-1.jpg"
+                    alt="Placeholder image for Open Mic Night at Harvest & Hearth"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="event-card__body">
+                  <div class="flow-3">
+                    <p class="section-heading__kicker">Community night</p>
+                    <h2 class="event-card__title">Open Mic Night</h2>
+                    <p class="event-card__description">
+                      A monthly evening for acoustic sets, poetry, and short spoken-word performances with a
+                      low-pressure sign-up sheet and a room full of supportive regulars.
+                    </p>
+                  </div>
+
+                  <dl class="event-meta-list">
+                    <div class="event-meta-list__item">
+                      <dt>Date and time</dt>
+                      <dd><time datetime="2026-05-07T18:30">Thursday, May 7, 2026 · Signups 6:30 PM</time></dd>
+                    </div>
+                    <div class="event-meta-list__item">
+                      <dt>Format</dt>
+                      <dd>Poetry, acoustic music, and spoken-word sets from 7:00 PM to 9:30 PM</dd>
+                    </div>
+                  </dl>
+
+                  <div class="event-card__actions">
+                    <a class="button button--ghost" href="/event-open-mic.html">View details</a>
+                    <a class="event-card__link" href="/contact.html#events">Ask about seating</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card event-card--live-music">
+                <div class="event-card__media">
+                  <img
+                    class="event-card__image"
+                    src="/src/assets/event-2.jpg"
+                    alt="Placeholder image for Live Music Friday at Harvest & Hearth"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="event-card__body">
+                  <div class="flow-3">
+                    <p class="section-heading__kicker">Live set</p>
+                    <h2 class="event-card__title">Live Music Friday</h2>
+                    <p class="event-card__description">
+                      Cedar Line Trio is bringing a candlelit jazz set to the cafe, paired with a short
+                      evening menu of espresso drinks, tea, and pastry plates.
+                    </p>
+                  </div>
+
+                  <dl class="event-meta-list">
+                    <div class="event-meta-list__item">
+                      <dt>Date and time</dt>
+                      <dd><time datetime="2026-05-15T19:30">Friday, May 15, 2026 · 7:30 PM to 9:00 PM</time></dd>
+                    </div>
+                    <div class="event-meta-list__item">
+                      <dt>Seating</dt>
+                      <dd>Limited tables available by email, with standing room near the bar</dd>
+                    </div>
+                  </dl>
+
+                  <div class="event-card__actions">
+                    <a
+                      class="button button--ghost"
+                      href="mailto:hello@harvestandhearth.com?subject=Live%20Music%20Friday%20Reservation"
+                      >Reserve by email</a
+                    >
+                    <a class="event-card__link" href="/contact.html#events">Plan a group visit</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card event-card--latte-class">
+                <div class="event-card__media">
+                  <img
+                    class="event-card__image"
+                    src="/src/assets/event-3.jpg"
+                    alt="Placeholder image for the Latte Art Class at Harvest & Hearth"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="event-card__body">
+                  <div class="flow-3">
+                    <p class="section-heading__kicker">Hands-on class</p>
+                    <h2 class="event-card__title">Latte Art Basics</h2>
+                    <p class="event-card__description">
+                      A beginner-friendly workshop on milk texture, pour timing, and simple rosetta and
+                      tulip patterns, with guided practice behind the bar.
+                    </p>
+                  </div>
+
+                  <dl class="event-meta-list">
+                    <div class="event-meta-list__item">
+                      <dt>Date and time</dt>
+                      <dd><time datetime="2026-05-24T15:00">Sunday, May 24, 2026 · 3:00 PM to 4:30 PM</time></dd>
+                    </div>
+                    <div class="event-meta-list__item">
+                      <dt>Seats</dt>
+                      <dd>Twelve spots, all equipment included, with time for practice pours</dd>
+                    </div>
+                  </dl>
+
+                  <div class="event-card__actions">
+                    <a class="button button--ghost" href="/contact.html#events">Reserve a seat</a>
+                    <a
+                      class="event-card__link"
+                      href="mailto:hello@harvestandhearth.com?subject=Latte%20Art%20Class%20Question"
+                      >Send a question</a
+                    >
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section-shell home-highlights">
-        <div class="container">
+      <section class="section-shell section-shell--muted">
+        <div class="container flow-5">
           <div class="section-heading flow-3">
-            <p class="section-heading__kicker">Why guests return</p>
-            <h2 class="section-heading__title">The kind of coffee shop people build into their week.</h2>
+            <p class="section-heading__kicker">Event notes</p>
+            <h2 class="section-heading__title">A few things we keep consistent from night to night.</h2>
             <p class="section-heading__copy">
-              We open early for commuters, keep the bar calm through the lunch rush, and hold space for
-              lingering conversations long after the first round of drinks.
+              We use a small, repeatable setup so the room stays comfortable for regular cafe guests and
+              first-time visitors alike.
             </p>
           </div>
 
           <div class="feature-grid">
             <article class="feature-card">
               <p class="feature-card__icon" aria-hidden="true">01</p>
-              <h3 class="feature-card__title">House-roasted espresso</h3>
+              <h3 class="feature-card__title">Early doors, calm start</h3>
               <p>
-                Our espresso is roasted in small batches each week and dialed in every morning for syrupy
-                shots, balanced milk drinks, and dependable drip all day.
+                Doors open at least 30 minutes before each event so guests can find a seat, order a drink,
+                and settle in before the first set or demo begins.
               </p>
             </article>
             <article class="feature-card">
               <p class="feature-card__icon" aria-hidden="true">02</p>
-              <h3 class="feature-card__title">Pastries worth arriving early</h3>
+              <h3 class="feature-card__title">Clear RSVP expectations</h3>
               <p>
-                Morning buns, hand pies, and fruit galettes are baked fresh before open, with a pastry case
-                that shifts through the week instead of standing still.
+                If a night has a seat limit or reserved tables, we say so clearly on the page and in the
+                confirmation response to avoid confusion at the door.
               </p>
             </article>
             <article class="feature-card">
               <p class="feature-card__icon" aria-hidden="true">03</p>
-              <h3 class="feature-card__title">A room with real staying power</h3>
+              <h3 class="feature-card__title">Cafe service stays open</h3>
               <p>
-                Bright tables, steady music, and genuinely warm service make the cafe feel just as good for
-                a ten-minute stop as it does for a slow afternoon reset.
+                Espresso, tea, and a focused pastry menu remain available throughout the night, so events
+                feel like an extension of the cafe rather than a complete reset.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section-shell section-shell--muted" id="menu-preview">
-        <div class="container">
-          <div class="section-heading section-heading--split">
-            <div class="flow-3">
-              <p class="section-heading__kicker">Menu preview</p>
-              <h2 class="section-heading__title">
-                Seasonal drinks and bakery staples that feel familiar, then a little surprising.
-              </h2>
-            </div>
-            <a class="button button--ghost" href="/menu.html">View full menu</a>
-          </div>
-
-          <div class="menu-grid">
-            <article class="menu-item menu-item--coffee menu-item--burnt-honey">
-              <div class="menu-item__media">
-                <img
-                  class="menu-item__image"
-                  src="/src/assets/coffee-2.jpg"
-                  alt="Burnt Honey Latte with silky foam in a stoneware mug"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="menu-item__header">
-                <div class="flow-2">
-                  <span class="menu-item__tag">Coffee</span>
-                  <h3 class="menu-item__name">Burnt Honey Latte</h3>
-                </div>
-                <p class="menu-item__price">$6.25</p>
-              </div>
-              <p class="menu-item__description">
-                Espresso, burnt honey syrup, steamed oat milk, and a pinch of orange zest finished with a
-                soft foam.
-              </p>
-              <p class="menu-item__meta">Available hot or iced</p>
-            </article>
-            <article class="menu-item menu-item--tea menu-item--strawberry-matcha">
-              <div class="menu-item__media">
-                <img
-                  class="menu-item__image"
-                  src="/src/assets/tea-1.jpg"
-                  alt="Iced strawberry matcha tonic with layered green tea and fruit over ice"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="menu-item__header">
-                <div class="flow-2">
-                  <span class="menu-item__tag">Tea</span>
-                  <h3 class="menu-item__name">Strawberry Matcha Tonic</h3>
-                </div>
-                <p class="menu-item__price">$6.50</p>
-              </div>
-              <p class="menu-item__description">
-                Ceremonial matcha, strawberry shrub, sparkling water, and a squeeze of lime served bright
-                and brisk.
-              </p>
-              <p class="menu-item__meta">Naturally dairy-free</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell" id="community">
-        <div class="container">
-          <article class="section-frame home-community__panel flow-4">
-            <p class="section-heading__kicker">What we care about</p>
-            <h2 class="section-heading__title">
-              Great coffee matters, but the feeling of being welcomed matters more.
-            </h2>
+      <section class="section-shell">
+        <div class="container events-planning-grid">
+          <article class="section-frame flow-4">
+            <p class="section-heading__kicker">Planning something</p>
+            <h2 class="section-heading__title">Need the room for a workshop, tasting, or team gathering?</h2>
             <p>
-              That means remembering regulars, keeping the menu clear, and serving a quick drip to the
-              person late for work with the same care we give a slow afternoon cortado.
+              We host small-format private events with coffee service, pastry platters, and room setups that
+              work for creative meetings, brand launches, and community classes.
             </p>
             <div class="button-group">
-              <a class="button button--secondary" href="/contact.html">Plan Your Visit</a>
-              <a class="button button--ghost" href="/events.html">See Events</a>
+              <a class="button" href="/contact.html#events">Start a conversation</a>
+              <a class="button button--ghost" href="/contact.html#contact-form">Send event details</a>
             </div>
+          </article>
+
+          <article class="section-frame flow-4">
+            <p class="section-heading__kicker">Featured detail page</p>
+            <h2 class="section-heading__title">See the full breakdown for Open Mic Night.</h2>
+            <p>
+              We built the individual event template around our monthly open mic so guests can quickly scan
+              the schedule, sign-up notes, and RSVP guidance before arriving.
+            </p>
+            <a class="button button--ghost" href="/event-open-mic.html">Open the event page</a>
           </article>
         </div>
       </section>

@@ -1,0 +1,121 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.event-grid {
+  display: grid;
+  gap: space(4);
+}
+
+.event-card {
+  @include mixins.surface-card(color-token(white), tone(color-token(line), 8%));
+
+  --event-image-position: 50% 50%;
+  --event-image-scale: 1.08;
+
+  display: grid;
+  overflow: hidden;
+  background: color-token(white);
+
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: tone(color-token(espresso), -4%);
+  }
+
+  &__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(color-token(ink), 0.08), rgba(color-token(ink), 0.34));
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--event-image-position);
+    transform: scale(var(--event-image-scale));
+  }
+
+  &__body {
+    display: grid;
+    gap: space(4);
+    padding: space(5);
+  }
+
+  &__title {
+    max-width: none;
+  }
+
+  &__description {
+    color: color-token(ink);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: space(3);
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+}
+
+.event-meta-list {
+  display: grid;
+  gap: space(3);
+  margin: 0;
+
+  &__item {
+    display: grid;
+    gap: space(1);
+    padding-bottom: space(3);
+    border-bottom: 1px solid tone(color-token(line), 10%);
+  }
+
+  dt {
+    color: color-token(mocha);
+    font-size: heading-size(label);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: color-token(ink);
+    font-weight: 700;
+  }
+}
+
+.event-card--open-mic {
+  --event-image-position: 50% 44%;
+  --event-image-scale: 1.12;
+}
+
+.event-card--live-music {
+  --event-image-position: 64% 42%;
+  --event-image-scale: 1.14;
+}
+
+.event-card--latte-class {
+  --event-image-position: 42% 38%;
+  --event-image-scale: 1.1;
+}
+
+@include mixins.respond-up(md) {
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .event-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
