@@ -1,0 +1,47 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.section-heading {
+  display: grid;
+  gap: space(3);
+  margin-bottom: space(5);
+
+  &__title,
+  &__copy {
+    max-width: 34rem;
+  }
+
+  &--split {
+    margin-bottom: space(5);
+  }
+}
+
+.page-overview {
+  display: grid;
+  gap: space(5);
+  align-items: start;
+
+  .section-heading {
+    margin-bottom: 0;
+  }
+
+  &__support {
+    display: grid;
+    gap: space(4);
+  }
+}
+
+@include mixins.respond-up(md) {
+  .section-heading--split {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: space(4);
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .page-overview--split {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

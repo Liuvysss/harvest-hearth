@@ -1,0 +1,14 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.about-story {
+  display: grid;
+  gap: space(4);
+}
+
+@include mixins.respond-up(lg) {
+  .about-story {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: start;
+  }
+}

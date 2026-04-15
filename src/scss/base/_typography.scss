@@ -1,0 +1,77 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as vars;
+
+:root {
+  color: color-token(ink);
+  background-color: color-token(mist);
+  font: 400 #{type-size(200)} / 1.6 vars.$font-body;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(color-token(caramel), 0.2), transparent 32%),
+    radial-gradient(circle at top right, rgba(color-token(sage), 0.12), transparent 28%),
+    linear-gradient(180deg, color-token(cream) 0%, color-token(mist) 52%, color-token(white) 100%);
+  color: color-token(ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: color-token(ink);
+  font-family: vars.$font-heading;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+h1 {
+  max-width: 12ch;
+  font-size: heading-size(h1);
+}
+
+h2 {
+  max-width: 18ch;
+  font-size: heading-size(h2);
+}
+
+h3 {
+  font-size: heading-size(h3);
+}
+
+h4 {
+  font-size: heading-size(h4);
+}
+
+h5 {
+  font-size: heading-size(h5);
+}
+
+h6 {
+  font-size: heading-size(h6);
+}
+
+p {
+  max-width: 64ch;
+  color: color-token(muted);
+}
+
+a {
+  color: inherit;
+}
+
+strong {
+  color: color-token(ink);
+}
+
+::selection {
+  background: tone(color-token(caramel), 55%);
+}

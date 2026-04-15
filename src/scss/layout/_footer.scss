@@ -1,0 +1,320 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.site-prefooter {
+  padding-block: space(7);
+  border-top: 1px solid rgba(color-token(cream), 0.12);
+  background-color: tone(color-token(espresso), -2%);
+  background-image:
+    linear-gradient(180deg, rgba(color-token(espresso), 0.7), rgba(color-token(roast), 0.82)),
+    radial-gradient(circle at top left, rgba(color-token(caramel), 0.18), transparent 34%),
+    url("../assets/prefooter-coffee-grains.jpg");
+  background-position:
+    center,
+    top left,
+    center;
+  background-repeat: no-repeat;
+  background-size:
+    auto,
+    auto,
+    cover;
+  color: tone(color-token(cream), 4%);
+
+  &__inner {
+    display: grid;
+    gap: space(5);
+    align-items: end;
+    --form-feedback-color: tone(color-token(cream), 14%);
+    --form-feedback-pending-color: tone(color-token(cream), 8%);
+    --form-feedback-success-color: color-token(white);
+  }
+
+  &__content {
+    display: grid;
+    gap: space(4);
+    max-width: 42rem;
+
+    .section-heading__kicker {
+      color: tone(color-token(oat), 2%);
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  &__title {
+    max-width: 20ch;
+    color: color-token(white);
+    font-size: heading-size(h2);
+    line-height: 1.12;
+  }
+
+  &__copy {
+    max-width: 48ch;
+    color: tone(color-token(cream), 10%);
+  }
+
+  &__fine-print {
+    color: tone(color-token(cream), 14%);
+    font-size: type-size(100);
+  }
+}
+
+.newsletter-form {
+  display: grid;
+  gap: space(3);
+
+  input {
+    width: 100%;
+    min-height: 3.2rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid tone(color-token(line), 12%);
+    border-radius: radius(md);
+    background: color-token(white);
+    color: color-token(ink);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+
+    &::placeholder {
+      color: tone(color-token(muted), 24%);
+    }
+
+    &:focus-visible {
+      border-color: tone(color-token(clay), 18%);
+      box-shadow: 0 0 0 4px rgba(color-token(caramel), 0.18);
+      outline: none;
+    }
+  }
+
+  .button {
+    background: color-token(white);
+    color: color-token(ink);
+    border-color: color-token(white);
+    box-shadow: none;
+
+    &:hover,
+    &:focus-visible {
+      background: tone(color-token(cream), 8%);
+      border-color: tone(color-token(cream), 8%);
+      color: color-token(ink);
+      box-shadow: none;
+    }
+
+    &:active {
+      background: tone(color-token(cream), 2%);
+    }
+  }
+}
+
+.site-footer {
+  padding-top: space(6);
+  padding-bottom: space(5);
+  background:
+    radial-gradient(circle at top right, rgba(color-token(caramel), 0.12), transparent 28%),
+    linear-gradient(180deg, tone(color-token(espresso), -2%), color-token(espresso));
+  color: tone(color-token(cream), 4%);
+
+  &__inner {
+    display: grid;
+    gap: space(6);
+  }
+
+  &__brand {
+    max-width: 28rem;
+  }
+
+  &__copy {
+    color: tone(color-token(cream), 10%);
+  }
+
+  &__contact {
+    p {
+      color: tone(color-token(cream), 14%);
+    }
+
+    a {
+      color: tone(color-token(cream), 4%);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+    }
+  }
+
+  &__nav,
+  &__aside {
+    display: grid;
+    gap: space(5);
+  }
+
+  &__section {
+    display: grid;
+    gap: space(3);
+  }
+
+  &__hours-list {
+    display: grid;
+    gap: space(3);
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: space(4);
+      padding-bottom: space(3);
+      border-bottom: 1px solid rgba(color-token(cream), 0.12);
+    }
+
+    span {
+      color: tone(color-token(cream), 16%);
+    }
+
+    strong {
+      color: color-token(white);
+      text-align: right;
+    }
+  }
+
+  &__legal {
+    display: grid;
+    gap: space(3);
+    margin-top: space(6);
+    padding-top: space(4);
+    border-top: 1px solid rgba(color-token(cream), 0.12);
+    color: tone(color-token(cream), 18%);
+    font-size: type-size(100);
+  }
+
+  &__legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(3);
+    list-style: none;
+
+    a {
+      color: tone(color-token(cream), 6%);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+    }
+  }
+}
+
+.brand--footer {
+  color: color-token(cream);
+
+  span {
+    color: tone(color-token(oat), 3%);
+  }
+}
+
+.footer-link-group {
+  display: grid;
+  gap: space(3);
+
+  &__title {
+    color: tone(color-token(cream), 20%);
+    font-size: heading-size(label);
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: grid;
+    gap: space(2);
+    list-style: none;
+
+    a {
+      color: tone(color-token(cream), 4%);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        color: color-token(white);
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+  list-style: none;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border: 1px solid rgba(color-token(cream), 0.18);
+    border-radius: radius(pill);
+    color: color-token(cream);
+    text-decoration: none;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(color-token(white), 0.12);
+      border-color: rgba(color-token(cream), 0.34);
+      color: color-token(white);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+@include mixins.respond-up(md) {
+  .site-prefooter__inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+
+  .newsletter-form {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__legal {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .site-footer__inner {
+    grid-template-columns: 1.1fr 1fr 0.85fr;
+    align-items: start;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,326 @@
+@use "sass:map";
+@use "../abstracts/functions" as *;
+@use "../abstracts/maps" as maps;
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as vars;
+
+%card-surface {
+  @include mixins.surface-card(color-token(white), tone(color-token(line), 8%));
+}
+
+%card-panel {
+  @extend %card-surface;
+  padding: space(5);
+}
+
+.section-frame,
+.feature-card,
+.menu-item,
+.quote-card,
+.contact-card,
+.hours-card,
+.process-step,
+.stat-card {
+  @extend %card-panel;
+}
+
+.feature-grid,
+.menu-grid,
+.process-grid {
+  display: grid;
+  gap: space(4);
+}
+
+.stats-grid,
+.contact-stack {
+  display: grid;
+  gap: space(3);
+}
+
+.section-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card {
+  display: grid;
+  gap: space(3);
+
+  &__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: radius(pill);
+    background: tone(color-token(caramel), 78%);
+    color: color-token(espresso);
+    font-family: vars.$font-heading;
+    font-size: type-size(300);
+  }
+
+  &__title {
+    max-width: none;
+  }
+}
+
+.stat-card {
+  padding: space(4);
+
+  &__value {
+    color: color-token(ink);
+    font-family: vars.$font-heading;
+    font-size: type-size(400);
+    line-height: 1;
+  }
+
+  &__label {
+    margin-top: space(2);
+  }
+}
+
+.quote-card {
+  display: grid;
+  align-content: center;
+  gap: space(4);
+  background: linear-gradient(180deg, tone(color-token(cream), 12%), color-token(white));
+
+  &__copy {
+    color: color-token(ink);
+    font-family: vars.$font-heading;
+    font-size: type-size(400);
+    line-height: 1.25;
+  }
+
+  &__cite {
+    color: color-token(mocha);
+    font-weight: 700;
+  }
+}
+
+.menu-item {
+  --menu-image-position: 50% 50%;
+  --menu-image-scale: 1.1;
+  --menu-image-filter: saturate(0.95);
+
+  position: relative;
+  display: grid;
+  gap: space(3);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.4rem;
+    background: color-token(caramel);
+  }
+
+  &__media {
+    position: relative;
+    margin: calc(space(5) * -1) calc(space(5) * -1) 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: color-token(espresso);
+  }
+
+  &__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(color-token(ink), 0.08), rgba(color-token(ink), 0.34));
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--menu-image-position);
+    transform: scale(var(--menu-image-scale));
+    filter: var(--menu-image-filter);
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: space(3);
+  }
+
+  &__name {
+    max-width: none;
+  }
+
+  &__tag,
+  &__price {
+    white-space: nowrap;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding-inline: 0.85rem;
+    border: 1px solid tone(color-token(line), 10%);
+    border-radius: radius(pill);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: color-token(ink);
+    font-family: vars.$font-heading;
+    font-size: type-size(300);
+    line-height: 1;
+  }
+
+  &__description {
+    color: color-token(ink);
+  }
+
+  &__meta {
+    font-size: type-size(100);
+  }
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+  list-style: none;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding-inline: 1rem;
+  border: 1px solid tone(color-token(line), 10%);
+  border-radius: radius(pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+// Category modifiers are generated from a map so expanding the menu is data-first.
+@each $name, $config in maps.$drink-categories {
+  $accent: map.get($config, accent);
+  $surface: map.get($config, surface);
+  $soft-accent: tone($accent, 78%);
+
+  .menu-item--#{$name} {
+    background: $surface;
+    border-color: tone($accent, 58%);
+
+    &::before {
+      background: $accent;
+    }
+
+    .menu-item__media::after {
+      background: linear-gradient(180deg, rgba($accent, 0.1), rgba($accent, 0.34));
+    }
+
+    .menu-item__tag {
+      background: $soft-accent;
+      border-color: tone($accent, 48%);
+      color: text-on($soft-accent);
+    }
+  }
+
+  .category-pill--#{$name} {
+    background: $soft-accent;
+    border-color: tone($accent, 48%);
+    color: text-on($soft-accent);
+  }
+}
+
+.menu-item--house-blend {
+  --menu-image-position: 18% 34%;
+  --menu-image-scale: 1.16;
+}
+
+.menu-item--orange-peel {
+  --menu-image-position: 70% 36%;
+  --menu-image-scale: 1.2;
+  --menu-image-filter: saturate(1) contrast(1.05);
+}
+
+.menu-item--jasmine-citrus {
+  --menu-image-position: 42% 22%;
+  --menu-image-filter: saturate(0.85) hue-rotate(-18deg) brightness(1.02);
+}
+
+.menu-item--honey-ginger {
+  --menu-image-position: 82% 62%;
+  --menu-image-filter: saturate(0.92) hue-rotate(-6deg) brightness(0.98);
+}
+
+.menu-item--cardamom-bun {
+  --menu-image-position: 26% 78%;
+  --menu-image-scale: 1.18;
+  --menu-image-filter: saturate(1.04) sepia(0.08) brightness(1.02);
+}
+
+.menu-item--gouda-pie {
+  --menu-image-position: 64% 70%;
+  --menu-image-scale: 1.14;
+  --menu-image-filter: saturate(0.88) sepia(0.1) contrast(1.02);
+}
+
+.contact-card,
+.hours-card {
+  display: grid;
+  gap: space(3);
+
+  a {
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+}
+
+.contact-card__title {
+  max-width: none;
+}
+
+.hours-list {
+  list-style: none;
+  display: grid;
+  gap: space(3);
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: space(3);
+    padding-bottom: space(3);
+    border-bottom: 1px solid tone(color-token(line), 10%);
+  }
+}
+
+.process-step {
+  display: grid;
+  gap: space(3);
+
+  &__count {
+    color: color-token(mocha);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+}
+
+@include mixins.respond-up(md) {
+  .menu-grid,
+  .feature-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

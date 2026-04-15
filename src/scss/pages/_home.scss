@@ -1,0 +1,13 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.highlight-layout {
+  display: grid;
+  gap: space(4);
+}
+
+@include mixins.respond-up(lg) {
+  .highlight-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}

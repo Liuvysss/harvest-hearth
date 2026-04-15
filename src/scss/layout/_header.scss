@@ -1,0 +1,100 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as vars;
+
+.announcement-bar {
+  padding-block: space(2);
+  background: color-token(espresso);
+  color: tone(color-token(cream), 4%);
+  text-align: center;
+  font-size: type-size(100);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid tone(color-token(line), 10%);
+  background: rgba(color-token(cream), 0.86);
+  backdrop-filter: blur(12px);
+
+  &__inner {
+    display: grid;
+    gap: space(4);
+    align-items: center;
+    padding-block: space(4);
+  }
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: space(1);
+  width: fit-content;
+  color: color-token(ink);
+  font-family: vars.$font-heading;
+  font-size: type-size(300);
+  line-height: 0.95;
+  text-decoration: none;
+
+  span {
+    color: color-token(mocha);
+    font-family: vars.$font-body;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+}
+
+.site-nav {
+  overflow-x: auto;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(2);
+    list-style: none;
+    width: max-content;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.8rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid transparent;
+    border-radius: radius(pill);
+    color: color-token(muted);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color vars.$transition-base,
+      color vars.$transition-base,
+      border-color vars.$transition-base;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(color-token(white), 0.72);
+      border-color: tone(color-token(line), 18%);
+      color: color-token(ink);
+    }
+
+    &[aria-current="page"] {
+      background: color-token(white);
+      border-color: tone(color-token(clay), 60%);
+      color: color-token(ink);
+    }
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .site-nav {
+    justify-self: center;
+  }
+}

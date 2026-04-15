@@ -1,0 +1,69 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as mixins;
+
+.contact-layout {
+  display: grid;
+  gap: space(4);
+}
+
+.contact-form {
+  display: grid;
+  gap: space(4);
+}
+
+.form-grid {
+  display: grid;
+  gap: space(4);
+}
+
+.field {
+  display: grid;
+  gap: space(2);
+
+  label {
+    color: color-token(ink);
+    font-weight: 700;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid tone(color-token(line), 12%);
+    border-radius: radius(md);
+    background: color-token(white);
+    color: color-token(ink);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+
+    &:focus-visible {
+      border-color: tone(color-token(clay), 18%);
+      box-shadow: 0 0 0 4px rgba(color-token(caramel), 0.18);
+      outline: none;
+    }
+  }
+
+  textarea::placeholder {
+    color: tone(color-token(muted), 22%);
+  }
+}
+
+address {
+  font-style: normal;
+  color: color-token(muted);
+}
+
+@include mixins.respond-up(md) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include mixins.respond-up(lg) {
+  .contact-layout {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}

@@ -1,0 +1,64 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+@use "./variables" as vars;
+
+@function color-token($key) {
+  @if map.has-key(vars.$color-tokens, $key) {
+    @return map.get(vars.$color-tokens, $key);
+  }
+
+  @error "Unknown color token `#{$key}`.";
+}
+
+@function space($step) {
+  @if map.has-key(vars.$spacing-scale, $step) {
+    @return map.get(vars.$spacing-scale, $step);
+  }
+
+  @error "Unknown spacing step `#{$step}`.";
+}
+
+@function radius($key) {
+  @if map.has-key(vars.$radius-scale, $key) {
+    @return map.get(vars.$radius-scale, $key);
+  }
+
+  @error "Unknown radius token `#{$key}`.";
+}
+
+@function type-size($key) {
+  @if map.has-key(vars.$type-scale, $key) {
+    @return map.get(vars.$type-scale, $key);
+  }
+
+  @error "Unknown type scale token `#{$key}`.";
+}
+
+@function heading-size($key) {
+  @if map.has-key(vars.$heading-scale, $key) {
+    @return map.get(vars.$heading-scale, $key);
+  }
+
+  @error "Unknown heading scale token `#{$key}`.";
+}
+
+@function tone($color, $amount) {
+  @if $amount > 0 {
+    @return color.mix(white, $color, $amount);
+  }
+
+  @if $amount < 0 {
+    @return color.mix(black, $color, math.abs($amount));
+  }
+
+  @return $color;
+}
+
+@function text-on($background) {
+  @if color.channel($background, "lightness", $space: hsl) > 60% {
+    @return color-token(ink);
+  }
+
+  @return color-token(white);
+}

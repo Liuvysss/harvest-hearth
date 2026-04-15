@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Harvest & Hearth about catering, wholesale coffee, pastry preorders, and events in Lancaster, PA."
+    />
+    <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="module" src="/src/scripts/site.js"></script>
+    <title>Harvest & Hearth Coffee Roasters | Contact</title>
+  </head>
+  <body class="page page--contact">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="announcement-bar">
+        <p class="container">Fresh laminated pastries out by 7:00 AM. Open daily in downtown Lancaster, PA.</p>
+      </div>
+      <div class="site-header__inner container">
+        <a class="brand" href="/index.html" aria-label="Harvest & Hearth Coffee Roasters home">
+          Harvest & Hearth
+          <span>Coffee Roasters</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="/index.html">Home</a></li>
+            <li><a class="site-nav__link" href="/menu.html">Menu</a></li>
+            <li><a class="site-nav__link" href="/about.html">About</a></li>
+            <li><a class="site-nav__link" href="/contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="button button--secondary" href="tel:+18285550147">Call the Cafe</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section-shell">
+        <div class="container flow-6">
+          <div class="page-overview page-overview--split">
+            <div class="section-heading flow-3">
+              <p class="section-heading__kicker">Contact</p>
+              <h1 class="section-heading__title">Plan a visit, ask about catering, or reach the cafe team.</h1>
+              <p class="lead">
+                Use the form for events, pastry preorders, and wholesale questions, or call the shop if you
+                need same-day help with hours, seating, or current availability.
+              </p>
+            </div>
+
+            <aside class="section-frame page-overview__support flow-4" aria-labelledby="contact-intro-title">
+              <p class="section-heading__kicker">Quickest response</p>
+              <h2 class="section-heading__title" id="contact-intro-title">Email for planning, phone for day-of questions.</h2>
+              <p>
+                We usually reply within two business days, and the cafe line is the best option for same-day
+                updates, large-order pickup timing, and general visit questions.
+              </p>
+            </aside>
+          </div>
+
+          <div class="contact-layout">
+            <section class="section-frame flow-5" id="contact-form" aria-labelledby="contact-form-title">
+              <div class="section-heading flow-3">
+                <p class="section-heading__kicker">Send a note</p>
+                <h2 class="section-heading__title" id="contact-form-title">Tell us what you're planning.</h2>
+                <p class="section-heading__copy">
+                  The more detail you share, the faster we can point you toward the right menu, timeline,
+                  or service option.
+                </p>
+              </div>
+
+              <form class="contact-form" method="post" data-feedback-form data-form-kind="contact">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="reason">Reason for reaching out</label>
+                    <select id="reason" name="reason" required>
+                      <option value="">Select one</option>
+                      <option value="pastries">Large pastry preorder</option>
+                      <option value="catering">Catering drop-off</option>
+                      <option value="events">Private workshop or tasting</option>
+                      <option value="wholesale">Wholesale coffee</option>
+                      <option value="general">General question</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="date">Preferred date</label>
+                    <input id="date" name="date" type="date" />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="message">Project details</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Share timing, headcount, menu ideas, and anything that would help us prepare."
+                    required
+                  ></textarea>
+                </div>
+
+                <button class="button" type="submit">Send inquiry</button>
+                <p class="form-feedback" role="status" aria-live="polite" hidden data-form-feedback></p>
+              </form>
+            </section>
+
+            <div class="contact-stack">
+              <section class="contact-card flow-3" id="visit" aria-labelledby="visit-title">
+                <p class="section-heading__kicker">Visit us</p>
+                <h2 class="contact-card__title" id="visit-title">Cafe details</h2>
+                <address>
+                  14 Alder Street<br />
+                  Lancaster, PA 17602<br />
+                  <a href="tel:+18285550147">(828) 555-0147</a><br />
+                  <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
+                </address>
+                <p>Street parking on Alder and Oak is easiest before 9:00 AM on weekdays.</p>
+              </section>
+
+              <section class="hours-card flow-3" aria-labelledby="hours-title">
+                <p class="section-heading__kicker">Hours</p>
+                <h2 class="contact-card__title" id="hours-title">When to stop by</h2>
+                <ul class="hours-list">
+                  <li><span>Monday to Friday</span><strong>6:30 AM to 6:00 PM</strong></li>
+                  <li><span>Saturday</span><strong>7:00 AM to 6:00 PM</strong></li>
+                  <li><span>Sunday</span><strong>7:00 AM to 4:00 PM</strong></li>
+                </ul>
+              </section>
+
+              <section class="contact-card flow-3" id="events" aria-labelledby="events-title">
+                <p class="section-heading__kicker">Private bookings</p>
+                <h2 class="contact-card__title" id="events-title">Catering and workshops</h2>
+                <p>
+                  From office coffee service to pastry-forward morning meetings, we build menus for groups
+                  that want something thoughtful without a lot of fuss.
+                </p>
+                <a class="button button--ghost" href="/about.html#values">Meet the team</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="site-prefooter" aria-labelledby="newsletter-title">
+      <div class="container site-prefooter__inner">
+        <div class="site-prefooter__content flow-4">
+          <p class="section-heading__kicker">Stay in the loop</p>
+          <h2 class="site-prefooter__title" id="newsletter-title">
+            Seasonal drinks, pastry drops, and neighborhood nights in your inbox.
+          </h2>
+          <p class="site-prefooter__copy">
+            We send one or two notes a month with menu launches, late-night events, and the occasional
+            first look at weekend specials.
+          </p>
+          <p class="site-prefooter__fine-print">No spam, just the good stuff. Unsubscribe any time.</p>
+        </div>
+
+        <form class="newsletter-form site-prefooter__form" method="post" data-feedback-form data-form-kind="newsletter">
+          <label class="visually-hidden" for="newsletter-email">Email address</label>
+          <input
+            id="newsletter-email"
+            name="newsletter-email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="Email address"
+            required
+          />
+          <button class="button" type="submit">Join the List</button>
+          <p class="form-feedback" role="status" aria-live="polite" hidden data-form-feedback></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand flow-4">
+          <a class="brand brand--footer" href="/index.html">Harvest & Hearth <span>Coffee Roasters</span></a>
+          <p class="site-footer__copy">
+            Neighborhood coffee, laminated pastries, and unhurried service in downtown Lancaster, PA.
+          </p>
+          <div class="site-footer__contact flow-2">
+            <p><a href="https://maps.google.com/?q=14+Alder+Street+Lancaster+PA+17602">14 Alder Street, Lancaster, PA 17602</a></p>
+            <p>
+              <a href="tel:+18285550147">(828) 555-0147</a> -
+              <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
+            </p>
+          </div>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer">
+          <section class="footer-link-group" aria-labelledby="footer-company-title">
+            <h2 class="footer-link-group__title" id="footer-company-title">Company</h2>
+            <ul class="footer-link-group__list">
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/about.html#our-story">Our Story</a></li>
+              <li><a href="/contact.html#visit">Visit the Cafe</a></li>
+              <li><a href="mailto:jobs@harvestandhearth.com">Careers</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-link-group" aria-labelledby="footer-support-title">
+            <h2 class="footer-link-group__title" id="footer-support-title">Support</h2>
+            <ul class="footer-link-group__list">
+              <li><a href="/contact.html#contact-form">Contact Us</a></li>
+              <li><a href="mailto:accessibility@harvestandhearth.com">Accessibility</a></li>
+              <li><a href="mailto:hello@harvestandhearth.com?subject=Gift%20Cards">Gift Cards</a></li>
+              <li><a href="tel:+18285550147">Call the Cafe</a></li>
+            </ul>
+          </section>
+        </nav>
+
+        <div class="site-footer__aside flow-4">
+          <section class="site-footer__section" aria-labelledby="footer-hours-title">
+            <h2 class="footer-link-group__title" id="footer-hours-title">Hours</h2>
+            <ul class="site-footer__hours-list">
+              <li><span>Monday to Friday</span><strong>6:30 AM to 6:00 PM</strong></li>
+              <li><span>Saturday</span><strong>7:00 AM to 6:00 PM</strong></li>
+              <li><span>Sunday</span><strong>7:00 AM to 4:00 PM</strong></li>
+            </ul>
+          </section>
+
+          <section class="site-footer__section" aria-labelledby="footer-social-title">
+            <h2 class="footer-link-group__title" id="footer-social-title">Follow Along</h2>
+            <ul class="social-links">
+              <li>
+                <a
+                  class="social-links__link"
+                  href="https://instagram.com/harvestandhearthcoffee"
+                  aria-label="Follow Harvest & Hearth on Instagram"
+                >
+                  <svg class="social-links__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                    <rect
+                      x="2.25"
+                      y="2.25"
+                      width="15.5"
+                      height="15.5"
+                      rx="4.25"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    ></rect>
+                    <circle cx="10" cy="10" r="3.35" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                    <circle cx="14.35" cy="5.65" r="1" fill="currentColor"></circle>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social-links__link"
+                  href="https://www.facebook.com/harvestandhearthcoffee"
+                  aria-label="Follow Harvest & Hearth on Facebook"
+                >
+                  <svg class="social-links__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                    <path
+                      fill="currentColor"
+                      d="M11.67 6.49h2.13V3.72c-.37-.05-1.64-.16-2.7-.16-2.67 0-4.5 1.63-4.5 4.63v2.58H3.72v3.1H6.6v6.57h3.52v-6.57h2.91l.46-3.1h-3.37V8.5c0-.9.25-1.51 1.55-1.51Z"
+                    ></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social-links__link"
+                  href="https://www.youtube.com/@harvestandhearthcoffee"
+                  aria-label="Watch Harvest & Hearth on YouTube"
+                >
+                  <svg class="social-links__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                    <path
+                      fill="currentColor"
+                      d="M18.41 5.6a2.35 2.35 0 0 0-1.66-1.67C15.27 3.5 10 3.5 10 3.5s-5.27 0-6.75.43A2.35 2.35 0 0 0 1.59 5.6a24 24 0 0 0-.42 4.4 24 24 0 0 0 .42 4.4 2.35 2.35 0 0 0 1.66 1.67c1.48.43 6.75.43 6.75.43s5.27 0 6.75-.43a2.35 2.35 0 0 0 1.66-1.67 24 24 0 0 0 .42-4.4 24 24 0 0 0-.42-4.4Z"
+                    ></path>
+                    <path fill="#fbf7f2" d="m8 13.13 5-3.13L8 6.87z"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="container site-footer__legal">
+        <p>&copy; 2026 Harvest & Hearth Coffee Roasters. All rights reserved.</p>
+        <ul class="site-footer__legal-links">
+          <li><a href="mailto:hello@harvestandhearth.com?subject=Privacy%20Request">Privacy</a></li>
+          <li><a href="mailto:accessibility@harvestandhearth.com">Accessibility</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/functions" as *;
+
+.button {
+  @include mixins.button-style(primary);
+
+  &--secondary {
+    @include mixins.button-style(secondary);
+  }
+
+  &--ghost {
+    @include mixins.button-style(ghost);
+  }
+}
+
+.button:disabled,
+.button[disabled] {
+  cursor: wait;
+  opacity: 0.78;
+  transform: none;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(3);
+}

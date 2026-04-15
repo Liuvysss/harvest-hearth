@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "./variables" as vars;
+
+$breakpoints: (
+  md: 48rem,
+  lg: 70rem
+);
+
+$drink-categories: (
+  coffee: (
+    accent: map.get(vars.$color-tokens, clay),
+    surface: #fff7f1
+  ),
+  tea: (
+    accent: map.get(vars.$color-tokens, sage),
+    surface: #f4faf6
+  ),
+  pastries: (
+    accent: map.get(vars.$color-tokens, caramel),
+    surface: #fff8ee
+  )
+);
+
+$page-accents: (
+  home: map.get(vars.$color-tokens, clay),
+  menu: map.get(vars.$color-tokens, sage),
+  about: map.get(vars.$color-tokens, caramel),
+  contact: map.get(vars.$color-tokens, pine)
+);
